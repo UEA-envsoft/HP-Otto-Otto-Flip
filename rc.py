@@ -16,9 +16,6 @@ from ottosensors import FollowLine
 
 #**************** Otto Flip additions: Servo *******************
 from ottomotor import Servo
-flipServo=Servo()
-flipServo.attach(26)
-flipServo.write(90)
 #***************************************************************
 
 led = Pin(2, Pin.OUT)  # Built in LED
@@ -60,6 +57,12 @@ line_sensors_enabled = False
 # Color ring memory
 color_ring_values = ["000000" for x in range(13)]
 ultrasonic_sensors_colors = ("000000", "000000")
+
+#**************** Otto Flip additions: Servo *******************
+flipServo=Servo()
+flipServo.attach(26)
+flipServo.write_us(0)
+#***************************************************************
 
 def motors_move(right_speed, left_speed, direction, t=None):
     right_speed = int(right_speed / 2)
